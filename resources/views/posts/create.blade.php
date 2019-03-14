@@ -2,6 +2,9 @@
 @section('content')
 
 
+<a href="{{route('posts.index')}}" class="btn btn-success">Posts</a>
+
+
 <form method='POST' action="{{route('posts.index')}}">
 @csrf
     <div class="form-group">

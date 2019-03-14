@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+<a href="{{route('posts.index')}}" class="btn btn-success">Posts</a>
+
 <form>
   <h3>Post Info</h3>
     <div class="form-group row">

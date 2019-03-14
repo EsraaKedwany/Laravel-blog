@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+<a href="{{route('posts.index')}}" class="btn btn-success">Posts</a>
+
 
 <form method='Post' action="{{route('posts.update',$post->id)}}">
 @csrf
