@@ -17,11 +17,15 @@
     @foreach($posts as $post)
         
         <tr>
-            <td>{{$post->user_id}}</td>  
+            <td>{{$post->id}}</td>  
             <td>{{$post->title}}</td>  
             <td>{{$post->user->name}}</td>  
             <td>{{$post->created_at}}</td>
-            <td><a href="{{route('posts.show',$post->id)}}" class="btn btn-primary">Show</a></td>
+            <td>
+                <a href="{{route('posts.show',$post->id)}}" class="btn btn-primary">Show</a>
+                <a href="{{route('posts.edit',$post->id)}}" class="btn btn-primary">Edit</a>
+                
+            </td>
         </tr>
     @endforeach
 
