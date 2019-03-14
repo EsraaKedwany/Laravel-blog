@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<a href="" class="btn btn-success">Create Post</a>
+<a href="{{route('posts.create')}}" class="btn btn-success">Create Post</a>
 
 <table class="table">
     <thead>
@@ -16,10 +16,10 @@
     @foreach($posts as $post)
         
         <tr>
-          <td>{{$post->id}}</td>  
+          <td>{{$post->user_id}}</td>  
           <td>{{$post->title}}</td>  
-          <td>me</td>  
-          <td>{{$post->created-at}}</td>  
+          <td>{{$post->user->name}}</td>  
+          <td>{{$post->created_at}}</td>
 
         </tr>
     @endforeach
