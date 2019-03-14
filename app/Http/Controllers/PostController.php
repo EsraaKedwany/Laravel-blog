@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Http\Requests\StorePostRequest;
-
+use App\Http\Requests\UpdatePostRequest;
 
 class PostController extends Controller
 {
@@ -81,7 +81,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
         $post->update([
             'title'=>$request->title,
