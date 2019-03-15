@@ -44,6 +44,7 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         Post::create(request()->all());
+        //$request->save();
         return redirect()->route('posts.index');
     }
 

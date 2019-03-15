@@ -10,6 +10,7 @@
             <th scope="col">Tilte</th>
             <th scope="col">Posted by</th>
             <th scope="col">Created at</th>
+            <th scope="col">Slug</th>
             <th scope="col">actions</th>
         </tr>
     </thead>
@@ -21,6 +22,7 @@
             <td>{{$post->title}}</td>  
             <td>{{$post->user->name}}</td>  
             <td>{{$post->created_at}}</td>
+            <td>{{$post->slug}}</td>  
             <td>
                 <a href="{{route('posts.show',$post->id)}}" class="btn btn-primary">Show</a>
                 <a href="{{route('posts.edit',$post->id)}}" class="btn btn-primary">Edit</a>
