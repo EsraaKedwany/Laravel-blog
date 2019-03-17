@@ -12,7 +12,7 @@ class Post extends Model
 
     public function sluggable()
     {
-        return ['slug'=>['source'=>'title']];
+        return ['slug'=>['source'=>'title','onUpdate'=>true]];
     }
     protected $fillable=[
         'title',

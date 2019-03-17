@@ -43,7 +43,8 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        Post::create(request()->all());
+
+        Post::create($request()->all());
         //$request->save();
         return redirect()->route('posts.index');
     }
@@ -90,9 +91,7 @@ class PostController extends Controller
             'user_id'=>$request->user_id,
             ]);
 
-        return view('posts.show',[
-            'post'=>$post,
-        ]);
+            return redirect()->route('posts.index');
     }
 
     /**

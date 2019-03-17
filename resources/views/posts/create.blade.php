@@ -1,11 +1,21 @@
 @extends('layouts.app')
 @section('content')
 
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
 
 <a href="{{route('posts.index')}}" class="btn btn-success">Posts</a>
 
 
-<form method='POST' action="{{route('posts.index')}}">
+<form method='POST' action="{{route('posts.store')}}">
 @csrf
     <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
