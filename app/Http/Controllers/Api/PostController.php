@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Http\Resources\UserResource;
+use App\Http\Resources\PostResource;
 
 class PostController extends Controller
 {
@@ -15,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::all();
+        return PostResource::collection(Post::paginate(3));
     }
 
     /**
@@ -51,7 +53,7 @@ class PostController extends Controller
     public function show($post)
     {
         $post=Post::findOrFail($post);
-        return $post;
+        return new PostResource($post);
     }
 
     /**
